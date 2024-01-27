@@ -15,9 +15,9 @@ pipeline {
                 script {
                     def mvnHome = tool 'Maven'
                     if (isUnix()) {
-                        sh "'${mvnHome}/bin/mvn' -f Product-microservice/pom.xml clean install"
+                        sh "'${mvnHome}/bin/mvn' -f pom.xml clean install"
                     } else {
-                        bat(/"${mvnHome}\bin\mvn" -f Product-microservice\pom.xml clean install/)
+                        bat(/"${mvnHome}\bin\mvn" -f pom.xml clean install/)
                     }
                 }
             }
@@ -29,9 +29,9 @@ pipeline {
                 script {
                     def mvnHome = tool 'Maven'
                     if (isUnix()) {
-                        sh "'${mvnHome}/bin/mvn' -f Product-microservice/pom.xml test"
+                        sh "'${mvnHome}/bin/mvn' -f pom.xml test"
                     } else {
-                        bat(/"${mvnHome}\bin\mvn" -f Product-microservice\pom.xml test/)
+                        bat(/"${mvnHome}\bin\mvn" -f pom.xml test/)
                     }
                 }
             }
