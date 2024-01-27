@@ -40,6 +40,9 @@ pipeline {
 
     post {
         always {
+            // Archive the JUnit test results
+            junit '**/target/surefire-reports/*.xml'
+            
             // Clean up or perform any other actions after the build
             cleanWs()
         }
